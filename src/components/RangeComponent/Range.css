@@ -1,0 +1,10 @@
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+input {
+    cursor: pointer;
+    margin: 0;
+}
