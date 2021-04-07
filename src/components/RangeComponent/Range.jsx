@@ -15,12 +15,12 @@ class Range extends React.Component {
     render() {
         return (
             <div className={'input-container'}>
-                <label htmlFor="rangeInput">{this.props.label}</label>
+                <label htmlFor="rangeInput">{this.props.label} ({this.props.unit})</label>
                 <input
                     id="rangeInput"
                        type="range"
                        min={0}
-                       step={1}
+                       step={this.props.step}
                        value={this.state.value}
                        max={this.props.maxValue}
                        onChange={this.handleOnchangeEvent}/>

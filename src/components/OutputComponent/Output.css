@@ -18,3 +18,45 @@
     text-align: right;
     max-width: 60%;
 }
+
+
+.output-item.no-weight {
+    border: 5px solid red;
+    padding: 10px;
+    margin: 10px 20px;
+}
+.output-item.inadequate-weight {
+    border: 5px solid darkred;
+    padding: 10px;
+    margin: 10px 20px;
+}
+
+.output-item.normal {
+    border: 3px solid green;
+    padding: 10px;
+    margin: 10px 20px;
+}
+
+.output-item.overweight {
+    border: 3px solid #e9b869;
+    padding: 10px;
+    margin: 10px 20px;
+}
+
+.output-item.obesity-first {
+    border: 4px solid #fdc500;
+    padding: 10px;
+    margin: 10px 20px;
+}
+
+.output-item.obesity-second {
+    border: 5px solid #f16d3a;
+    padding: 10px;
+    margin: 10px 20px;
+}
+
+.output-item.obesity-thirds {
+    border: 6px solid #ff0000;
+    padding: 10px;
+    margin: 10px 20px;
+}
