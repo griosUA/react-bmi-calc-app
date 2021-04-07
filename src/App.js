@@ -38,6 +38,7 @@ class App extends React.Component {
         pound: 0.45, //кг
     }
 
+
     onChangeHeight = (newHeight) => {
         this.setState({
             height: newHeight,
@@ -51,19 +52,22 @@ class App extends React.Component {
     }
 
     countBmi() {
-        let weight = this.state.weight;
-        let height;
-        if (this.state.needConvert) {
-            height = this.state.height;
-        } else {
-            height = this.state.height / 100
-        }
-        const countBmi = Number((weight / Math.pow((height), 2)).toFixed(2));
-        const bmi = !isNaN(countBmi) ? countBmi : '-'
-        this.setState({
-            bmi: bmi
-        })
-        this.getBmiClass(bmi)
+        setTimeout(() => {
+            let weight = this.state.weight;
+            let height;
+            if (this.state.needConvert) {
+                height = this.state.height;
+            } else {
+                height = this.state.height / 100
+            }
+            const countBmi = Number((weight / Math.pow((height), 2)).toFixed(2));
+            const bmi = !isNaN(countBmi) ? countBmi : '-'
+            this.setState({
+                bmi: bmi
+            })
+            this.getBmiClass(bmi)
+        }, 500)
+
     }
 
     onChangeMode = () => {
@@ -104,35 +108,35 @@ class App extends React.Component {
 
     getBmiClass(bmi) {
         let bmiClass = '';
-        let styleClass= '';
+        let styleClass = '';
         switch (true) {
             case bmi <= 16 :
                 bmiClass = 'Выраженный дефицит массы тела';
-                styleClass= 'no-weight';
+                styleClass = 'no-weight';
                 break;
             case bmi >= 16 && bmi <= 18.5:
                 bmiClass = 'Недостаточная (дефицит) масса тела';
-                styleClass= 'inadequate-weight';
+                styleClass = 'inadequate-weight';
                 break;
             case bmi >= 18.5 && bmi <= 25:
                 bmiClass = 'Норма';
-                styleClass= 'normal';
+                styleClass = 'normal';
                 break;
             case bmi >= 25 && bmi <= 30:
                 bmiClass = 'Избыточная масса тела (предожирение)';
-                styleClass= 'overweight';
+                styleClass = 'overweight';
                 break;
             case bmi >= 30 && bmi <= 35:
                 bmiClass = 'Ожирение';
-                styleClass= 'obesity-first';
+                styleClass = 'obesity-first';
                 break;
             case bmi >= 35 && bmi <= 40:
                 bmiClass = 'Ожирение резкое';
-                styleClass= 'obesity-second';
+                styleClass = 'obesity-second';
                 break;
             case bmi >= 40:
                 bmiClass = 'Очень резкое ожирение';
-                styleClass= 'obesity-thirds';
+                styleClass = 'obesity-thirds';
                 break;
             default:
                 bmiClass = 'error'
